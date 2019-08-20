@@ -1,0 +1,20 @@
+{
+  "name": "segundo",
+  "version": "1.0.0",
+  "description": "Projeto de teste",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "teste"
+  ],
+  "author": "Diego",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin - Loja de roupas</title>
+    <style>
+        table, tr, td, th {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 5px 10px;
+        }
+        th{
+            font-weight:bolder; 
+        }
+    </style>
+
+</head>
+
+<body>
+    <img src="/img/caminho.png">
+    <h1>Loja de roupas</h1>
+    <ul>
+        <li><a href="/">Listar</a></li>
+        <li><a href="/cadastro">Cadastrar</a></li>
+    </ul>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Marca</th>
+            <th>Tipo</th>
+            <th>Cor</th>
+            <th>Preço</th>
+            <th>Edita</th>
+            <th>Deleta</th>
+        </tr>
+        <tr>
+            <td><%=id%></td>
+            <td><%=marca%></td>
+            <td><%=tipo%></td>
+            <td><%=cor%></td>
+            <td><%=preco%></td>
+            <td></td>
+            <td></td>            
+        </tr>
+    </table>
+</body>
+
+</html>
