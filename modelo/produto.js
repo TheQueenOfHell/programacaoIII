@@ -1,6 +1,6 @@
 const conexao=require('./conexao')
 
-var Produto=new conexao.Schema({
+var ProdutoSchema=new conexao.Schema({
     marca:{
         type:String
     },
@@ -9,10 +9,10 @@ var Produto=new conexao.Schema({
     },
     cor:{
         type:String
-    }
+    },
     valor:{
-        type:Double
+        type:Number
     }
 })
 
-modulo.exports=conexao.Model("Produto",Produto)
+module.exports=conexao.model("Produto",ProdutoSchema)
