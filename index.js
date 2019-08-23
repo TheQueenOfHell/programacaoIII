@@ -21,7 +21,15 @@ app.listen(3000,function(){
 // Esta realizando uma função e dentro da função esta realizando um codigo
 // O codigo diz que esta renderizando a pagina "index.ejs" e na págia não esta recebendo nenhum arquivo(nao tem nenhuma informação sendo enviada)
 app.get('/',function(req,res){
-    res.render('index.ejs',{})
+    Produto.find({}).lean().exec(
+        function(err,docs){
+            if(err){
+                res.render('index.ejs',{"msg":err})
+            }else{
+                res.render('index.ejs',{"Produtos":docs})
+            }
+        }
+    )
 })
 
 // Esta realizando uma função que tem uma requisição e uma resposta
@@ -38,7 +46,7 @@ app.post('/cadastro', function(req,res){
         marca:req.body.marca, 
         tipo:req.body.tipo, 
         cor:req.body.cor, 
-        preco:req.body.preco
+        valor:req.body.preco
     })
     produto.save(function(err){
         if(err){
