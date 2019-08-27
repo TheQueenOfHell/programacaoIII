@@ -57,3 +57,11 @@ app.post('/cadastro', function(req,res){
         }
     })
 })
+//Deleta o item
+app.get('/deletar/:id',function(req,res){
+    Produto.findByIdAndDelete(req.params.id,function(err,produto){
+        Produto.find({}).lean().exec(function(err,docs){
+            res.render('index.ejs',{"Produtos":docs,msg:"Deletado com sucesso!!"})
+        })
+    })
+})
