@@ -27,6 +27,11 @@
         <li><a href="/">Listar</a></li>
         <li><a href="/cadastro">Cadastrar</a></li>
     </ul>
+    <form action="/" method="POST">
+        <input type="text" name="filtro" placeholder="Pesquisar">
+        <input type="submit" value:"Pesquisar">
+    </form>
+    <br></br>
     <table>
         <tr>
             <th>ID</th>
@@ -44,8 +49,8 @@
             <td><%=produto.tipo%></td>
             <td><%=produto.cor%></td>
             <td><%=produto.valor%></td>
-            <td></td>
-            <td><a href="/deletar/<%=produto._id%>"><img style="width: 30px" src="/img/lixeira.png"></a></td>            
+            <td><a href="/editar/<%=produto._id%>"><img style="width:30px" src="/img/editar.jpg"></a></td>
+            <td><a href="/deletar/<%=produto._id%>"><img style="width:30px" src="/img/lixeira.png"></a></td>            
         </tr>
         <% }) %>
     </table>

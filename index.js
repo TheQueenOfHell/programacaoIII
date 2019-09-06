@@ -65,3 +65,29 @@ app.get('/deletar/:id',function(req,res){
         })
     })
 })
+
+app.get('/editar/:id',function(req,res){
+    Produto.findById(req.params.id, function(err,produto){
+        res.render('edita.ejs',{"Produto":produto})
+    })
+})
+
+app.post('/editar/:id', function (req,res){
+    Produto.findByIdAndUpdate(req.params.id,{
+        marca:req.body.marca, 
+        tipo:req.body.tipo, 
+        cor:req.body.cor, 
+        valor:req.body.preco
+    },function (err){
+        Produto.find({}).lean().exec(function(err,docs){
+            res.render('index.ejs',{"Produtos":docs,msg:"Editado com sucesso!!"})
+        
+        })
+    })
+})
+
+app.post("/",function (req,res){
+    Produto.find({marca:new RegExp(req.body.filtro, 'i')}).lean().exec(function(err,docs){
+        res.render('index.ejs',{"Produtos": docs})
+    })
+})

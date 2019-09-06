@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin - Loja de roupas</title>
+</head>
+<body>
+    <h1>Loja de roupas</h1>
+    <ul>
+        <li><a href="/">Listar</a></li>
+        <li><a href="/cadastro">Cadastrar</a></li>
+    </ul>
+    <form method="post">
+        <label>ID</label>
+        <input type="text" readonly name="id" id="" placeholder="Id" value="<%=Produto._id%>">
+        <br>
+        <label>Marca</label>
+        <input type="text" name="marca" id="" placeholder="Marca" value="<%=Produto.marca%>">
+        <br>
+        <label>Tipo</label>
+        <input type="text" name="tipo" id="" placeholder="Tipo" value="<%=Produto.tipo%>">
+        <br>
+        <label>Cor</label>
+        <input type="color" name="cor" id="" value="<%=Produto.cor%>">
+        <br>
+        <label>Preço</label>
+        <input type="number" step='0.01' name="preco" id="" placeholder="Preço" value="<%=Produto.valor%>´][-v  ">
+        <br><br>
+        <input type="reset">
+        <input type="submit">        
+    </form>
+    <%if(typeof msg!="undefined"){%>
+        <h1><%=msg%></h1>
+        <%}%>
+</body>
+</html>
